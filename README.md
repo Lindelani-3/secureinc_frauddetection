@@ -30,8 +30,20 @@
 
 ## KPIs
 
+***Precision-Recall AUC (PR AUC):*** Measures the trade-off between precision (the ability of the model to identify only fraudulent transactions as fraudulent) and recall (the ability of the model to find all the fraudulent transactions) across different thresholds. It is especially useful for imbalanced datasets.
 
-## Data
+***F1 Score:*** The harmonic mean of precision and recall, providing a single metric to assess the balance between the two.
+
+***Recall (Sensitivity):*** Indicates the model's ability to correctly identify all actual fraudulent cases. High recall is crucial to ensure that frauds are not missed.
+
+***Precision:*** Reflects how accurate the fraud predictions are; i.e., the percentage of transactions flagged as fraudulent that were actually fraudulent.
+
+***Accuracy:*** Overall, how often the model is correct, though less important for imbalanced classes.
+
+***False Positive Rate (FPR):*** The rate at which legitimate transactions are incorrectly classified as fraudulent. Minimizing this is essential to avoid inconveniencing users.
+
+
+## Data Overview
 
 
 ## Feature Selection
