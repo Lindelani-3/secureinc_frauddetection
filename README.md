@@ -8,6 +8,8 @@
 - Transaction data including transaction amount, time, and customer behavior indicators.
 - Labels indicating fraudulent and legitimate transactions.
 
+**Tools**: ___
+
 ## Workplace Requirements:
 
 **Objective:** Develop a machine learning model to accurately identify fraudulent transactions with a focus on minimizing false negatives (missing fraudulent transactions) while controlling the rate of false positives (legitimate transactions flagged as fraudulent).
@@ -34,16 +36,16 @@
 
 ## Feature Selection
 
-1. **Decision Trees**
+1. **Decision Trees:**
 Decision Trees and tree-based ensemble methods like Random Forests can rank features by their importance.
 
-2. **Pearson's Correlation Coefficient**
+2. **Pearson's Correlation Coefficient:**
 Pearson's coefficient measures the linear correlation between two variables, ranging from -1 to 1. Features with very low correlation with the target variable can potentially be removed.
 
-3. **Chi-squared Test**
+3. **Chi-squared Test:**
 The Chi-squared test is used to determine whether there's a significant association between categorical variables. It's not directly applicable to the continuous variables in your dataset unless they are binned or discretized first.
 
-4. **Lasso Regression (L1 Regularization)**
+4. **Lasso Regression (L1 Regularization):**
 Lasso Regression can shrink some coefficients to zero, effectively performing feature selection.
 
 
