@@ -4,8 +4,6 @@
 
 **Company**: Secure Transactions Inc.
 
-**Project Duration**: 3 months
-
 **Data Specs**:
 - Transaction data including transaction amount, time, and customer behavior indicators.
 - Labels indicating fraudulent and legitimate transactions.
