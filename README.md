@@ -4,7 +4,7 @@
 
 **Company**: Secure Transactions Inc.
 
-**Project Duration**: 6 months
+**Project Duration**: 3 months
 
 **Data Specs**:
 - Transaction data including transaction amount, time, and customer behavior indicators.
