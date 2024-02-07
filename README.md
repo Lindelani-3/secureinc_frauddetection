@@ -61,6 +61,14 @@ The Chi-squared test is used to determine whether there's a significant associat
 Lasso Regression can shrink some coefficients to zero, effectively performing feature selection.
 
 
+All methods show high precision, recall, and f1-score for class 0 (non-fraud), which is expected due to class imbalance. For class 1 (fraud), Lasso Regularization and Pearson's Coefficient have similar performance, which is generally strong across precision, recall, and f1-score.
+
+
+The top 8 features for your fraud detection model, prioritized by their selection frequency across methods and supported by model performance, are:
+
+
+**V14, V17, V10, V12, V4, V16, V11, V18**
+
 
 ## Class Imbalance Handling
 
@@ -70,3 +78,29 @@ Lasso Regression can shrink some coefficients to zero, effectively performing fe
   
 
 ## ML Models
+
+
+### Random Forest
+
+**Performance:** Shows strong performance across all metrics on both test and validation sets, with very consistent PR AUC scores, indicating a robust ability to balance precision and recall.
+
+**Interpretation:** The slight increase in precision on the validation set suggests it's slightly better at minimizing false positives when applied to unseen data. The small dip in recall indicates a marginal increase in missed fraudulent transactions.
+
+
+### KNN
+
+**Performance:** Exhibits the highest PR AUC on the test set but sees a noticeable drop on the validation set. While it achieves high precision, its recall is lower compared to Random Forest, especially on the validation set.
+
+**Interpretation:** The high precision but lower recall suggest that while the KNN model is very confident in its fraud predictions, it might miss a higher proportion of actual frauds than Random Forest. The drop in PR AUC on the validation set might indicate overfitting to the test set or less generalizability.
+
+
+### SVM
+
+**Performance:** Demonstrates the highest PR AUC among the three models on the test set and maintains strong performance on the validation set. It achieves the highest precision on the validation set with a perfect score but at the cost of the lowest recall.
+
+**Interpretation:** The perfect precision on the validation set indicates that when SVM flags a transaction as fraudulent, it is very likely to be correct. However, the lower recall suggests it misses a significant number of fraudulent transactions, which could be a critical drawback in fraud detection contexts where missing fraud can have substantial financial implications.
+
+
+## Conclusion
+
+The Random Forest model demonstrated outstanding performance, making it a reliable choice for detecting fraudulent transactions in our dataset. Its high scores in precision and recall are particularly noteworthy because they suggest that the model can minimize false positives (incorrectly flagged legitimate transactions) while effectively identifying most fraudulent transactions. This balance is critical in fraud detection, where the cost of missing a fraudulent transaction can be very high, but so can the inconvenience and customer service implications of falsely flagging legitimate transactions as fraud.
