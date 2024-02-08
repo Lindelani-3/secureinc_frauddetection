@@ -1,4 +1,4 @@
-# Fraudulent Transaction Identification System
+# Machine Learning-Based Fraud Detection System in High-Dimensional, Imbalanced Data
 
 ## Meta
 
@@ -8,7 +8,13 @@
 - Transaction data including transaction amount, time, and customer behavior indicators.
 - Labels indicating fraudulent and legitimate transactions.
 
-**Tools**: ___
+**Technologies and Tools:**
+
+- Data Analysis and Modeling: Python (Pandas, NumPy, Scikit-learn)
+- Data Visualization: Matplotlib, Seaborn
+- Development Environment: Databricks
+- Data Storage: Azure Blob Storage
+- Preliminary Data Processing: Excel, Power Query
 
 ## Workplace Requirements:
 
@@ -45,6 +51,11 @@
 
 ## Data Overview
 
+The dataset contains transactions made by credit cards in September 2013 by European cardholders. This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.
+
+It contains only numerical input variables which are the result of a PCA transformation. Unfortunately, due to confidentiality issues, we cannot provide the original features and more background information about the data. Features V1, V2, … V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-sensitive learning. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
+
+*(https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)*
 
 ## Feature Selection
 
@@ -70,6 +81,10 @@ The top 8 features for your fraud detection model, prioritized by their selectio
 **V14, V17, V10, V12, V4, V16, V11, V18**
 
 
+![feature_importance](https://github.com/Lindelani-3/secureinc_frauddetection/assets/99859713/0897dfbb-60a0-4a78-b587-37179adb4d7e)
+
+
+
 ## Class Imbalance Handling
 
 - **Oversampling Minority Class:** Increase the number of instances in the minority class (fraudulent transactions) by replicating them. This can be achieved manually or by using sophisticated techniques like SMOTE (Synthetic Minority Over-sampling Technique) which creates synthetic samples rather than replicating existing ones. *(Source: Chawla, N.V., Bowyer, K.W., Hall, L.O. & Kegelmeyer, W.P. (2002). SMOTE: Synthetic Minority Over-sampling Technique. Journal of Artificial Intelligence Research, 16, 321-357.)*
@@ -78,6 +93,8 @@ The top 8 features for your fraud detection model, prioritized by their selectio
   
 
 ## ML Models
+
+![model_performance_comparison](https://github.com/Lindelani-3/secureinc_frauddetection/assets/99859713/857ee849-e20c-457c-ab4c-c3eae580cf19)
 
 
 ### Random Forest
@@ -101,6 +118,24 @@ The top 8 features for your fraud detection model, prioritized by their selectio
 **Interpretation:** The perfect precision on the validation set indicates that when SVM flags a transaction as fraudulent, it is very likely to be correct. However, the lower recall suggests it misses a significant number of fraudulent transactions, which could be a critical drawback in fraud detection contexts where missing fraud can have substantial financial implications.
 
 
-## Conclusion
+## Chosen Model: Random Forest Classifier
 
 The Random Forest model demonstrated outstanding performance, making it a reliable choice for detecting fraudulent transactions in our dataset. Its high scores in precision and recall are particularly noteworthy because they suggest that the model can minimize false positives (incorrectly flagged legitimate transactions) while effectively identifying most fraudulent transactions. This balance is critical in fraud detection, where the cost of missing a fraudulent transaction can be very high, but so can the inconvenience and customer service implications of falsely flagging legitimate transactions as fraud.
+
+![model_heatmap_comparison](https://github.com/Lindelani-3/secureinc_frauddetection/assets/99859713/86681e82-71a3-4bab-a5cb-33187e7e12f3)
+
+
+![precision_recall_curve](https://github.com/Lindelani-3/secureinc_frauddetection/assets/99859713/e91bd59e-f8ca-4b8c-825d-390dc943399c)
+
+
+![model_confusion_matrix](https://github.com/Lindelani-3/secureinc_frauddetection/assets/99859713/961bf1e2-c20a-4b7c-9db6-30ce9dccd20c)
+
+
+Successfully developed a Random Forest model that achieved a **PR AUC score of 0.982** on the test dataset, indicating exceptional precision and recall in identifying fraudulent transactions. Including an impresive **False Positive Rate (FPR) of only about 0.03**.
+
+## Conclusion
+
+
+The project was executed through a series of steps, starting from data collection and preprocessing to model training and evaluation. The chosen Random Forest model demonstrated high performance across various metrics, making it an effective tool for fraud detection. 
+
+The project underscored the importance of using a combination of data preprocessing techniques and machine learning algorithms to handle imbalanced datasets typically encountered in fraud detection scenarios.
