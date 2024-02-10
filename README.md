@@ -16,6 +16,8 @@
 - Data Storage: Azure Blob Storage
 - Preliminary Data Processing: Excel, Power Query
 
+**Link to notebook:** https://adb-157266668765265.5.azuredatabricks.net/?o=157266668765265#notebook/4344987835917104
+
 ## Workplace Requirements:
 
 **Objective:** Develop a machine learning model to accurately identify fraudulent transactions with a focus on minimizing false negatives (missing fraudulent transactions) while controlling the rate of false positives (legitimate transactions flagged as fraudulent).
