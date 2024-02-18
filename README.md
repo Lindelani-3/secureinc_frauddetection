@@ -15,6 +15,7 @@
 - Development Environment: Databricks
 - Data Storage: Azure Blob Storage
 - Preliminary Data Processing: Excel, Power Query
+- Database Management: MS SQL
 
 **Link to notebook:** https://adb-157266668765265.5.azuredatabricks.net/?o=157266668765265#notebook/4344987835917104
 
@@ -133,7 +134,7 @@ The Random Forest model demonstrated outstanding performance, making it a reliab
 ![model_confusion_matrix](https://github.com/Lindelani-3/secureinc_frauddetection/assets/99859713/961bf1e2-c20a-4b7c-9db6-30ce9dccd20c)
 
 
-Successfully developed a Random Forest model that achieved a **PR AUC score of 0.982** on the test dataset, indicating exceptional precision and recall in identifying fraudulent transactions. Including an impresive **False Positive Rate (FPR) of only about 0.03**.
+Successfully developed a Random Forest model that achieved a **PR AUC score of 0.982** on the test dataset, indicating exceptional precision and recall in identifying fraudulent transactions. Including an impresive **False Positive Rate (FPR) of only about 0.03**. We then leveraged MS SQL to manage and store the processed data securely, as it serves as a robust database management system, facilitating efficient data retrieval and manipulation for analysis.
 
 ## Conclusion
 
